@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>میلاد شعبانی — مهندس هوش تجاری</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent: #1f3864;
+    --ink: #2d2d2d;
+    --muted: #6f6f6f;
+    --rule: #d9d9d9;
+    --bullet: #4a4a4a;
+    --page-w: 820px;
+    --side-col: 160px;
+    --gap: 24px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ececed;
+    color: var(--ink);
+    font-family: "B Nazanin", "Vazirmatn", Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: right;
+  }
+
+  .page {
+    max-width: var(--page-w);
+    margin: 32px auto;
+    background: #fff;
+    padding: 48px 54px 56px;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ── هدر ─────────────────────────────────────────── */
+  .main-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 4px;
+  }
+  .header-bar {
+    width: 5px;
+    align-self: stretch;
+    min-height: 60px;
+    background: var(--accent);
+    border-radius: 3px;
+    flex: 0 0 5px;
+  }
+  .name {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--accent);
+    margin: 0;
+  }
+  .subtitle {
+    font-size: 15.5px;
+    font-weight: 400;
+    color: var(--muted);
+    margin: 6px 0 0;
+  }
+
+  /* متن‌های انگلیسی داخل رزومه فارسی: تایمز نیو رومن، کمی ریزتر، چپ‌به‌راست */
+  .en {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.87rem;
+    unicode-bidi: isolate;
+  }
+  .en .en { font-size: inherit; } /* prevent any nested .en from compounding */
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 18px 0;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 18px;
+    margin: 4px 0 2px;
+  }
+  .contact a { color: var(--accent); text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .contact-item svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .contact-item svg.solid { fill: var(--accent); stroke: none; }
+
+  .section { margin-top: 6px; }
+
+  .row {
+    display: grid;
+    grid-template-columns: var(--side-col) 1fr;
+    column-gap: var(--gap);
+    align-items: start;
+  }
+
+  .sec-title {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .sec-title-main {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 18px;
+    margin: 12px 0 8px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .meta .org { color: var(--ink); font-weight: 700; }
+
+  .entry { margin-bottom: 14px; }
+  .role {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+    margin: 0 0 6px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .entry p { margin: 0 0 6px; }
+  .lead { font-weight: 700; color: var(--ink); margin: 8px 0 3px; break-after: avoid; page-break-after: avoid; }
+
+  ul {
+    margin: 4px 0 8px;
+    padding-inline-start: 20px;
+    padding-inline-end: 0;
+  }
+  ul li {
+    margin-bottom: 5px;
+    color: var(--ink);
+  }
+  ul li::marker { color: var(--bullet); }
+  ul ul { margin: 4px 0; }
+  ul ul li { list-style-type: circle; }
+
+  .highlights li { margin-bottom: 7px; }
+  .highlights .k { font-weight: 700; }
+
+  .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .skill-groups .grp { margin-bottom: 8px; }
+  .skill-groups .grp-title { font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .skill-groups .grp span.tag {
+    display: inline-block;
+    background: #f0f3f8;
+    color: var(--accent);
+    border: 1px solid #dbe3ef;
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin: 2px 0 2px 4px;
+    font-size: 13px;
+  }
+
+  .print-btn {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: "B Nazanin", "Vazirmatn", Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(31, 56, 100, 0.35);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    z-index: 100;
+  }
+  .print-btn:hover {
+    background: #16294a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(31, 56, 100, 0.42);
+  }
+  .print-btn:active { transform: translateY(0); }
+  .print-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @page { size: A4; margin: 14mm 15mm; }
+  @media print {
+    html, body { background: #fff; font-size: 12pt; }
+    .page {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    a { color: var(--accent); }
+    li { break-inside: avoid; page-break-inside: avoid; }
+    .print-btn { display: none !important; }
+  }
+</style></head>
+<body>
+  <button class="print-btn" onclick="window.print()" aria-label="چاپ رزومه">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    چاپ / ذخیره به‌صورت <span class="en" dir="ltr">PDF</span>
+  </button>
+  <main class="page">
+
+    <header class="main-header">
+      <div class="header-bar"></div>
+      <div>
+        <h1 class="name">میلاد شعبانی</h1>
+        <p class="subtitle">مهندس هوش تجاری (<span class="en" dir="ltr">BI</span>)</p>
+      </div>
+    </header>
+
+    <hr class="divider" />
+
+    <section class="contact">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6z"/><path d="M22 6l-10 7L2 6"/></svg>
+        <a class="en" dir="ltr" href="mailto:milad.shabani6515@gmail.com">milad.shabani6515@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>کرج، البرز، ایران</span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <a class="en" href="https://miladshabani.ir" dir="ltr">miladshabani.ir</a>
+      </div>
+      <div class="contact-item">
+        <svg class="solid" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        <a class="en" href="https://linkedin.com/in/milad-shabani97" dir="ltr">linkedin.com/in/milad-shabani97</a>
+      </div>
+      <div class="contact-item">
+        <svg class="solid" viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+        <a class="en" href="https://github.com/Milad-Shabani" dir="ltr">github.com/Milad-Shabani</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">خلاصه</div>
+        <div>
+          <p style="margin:0 0 8px;">مهندس هوش تجاری (<span class="en" dir="ltr">BI</span>) با بیش از ۴ سال تجربه در تبدیل نیازهای کسب‌وکار به بینش‌های عملی، تعریف و پایش شاخص‌های کلیدی عملکرد سازمانی و طراحی داشبورد و گزارش‌های تصمیم‌یار برای مدیران. سابقه همکاری مستقیم با تیم‌های فروش، بازاریابی و تولید در صنایع مخابرات، دارویی، تولید و فناوری جهت شناسایی فرصت‌های بهبود و ارائه راهکار داده‌محور. مسلط به <span class="en" dir="ltr">Power BI</span>، <span class="en" dir="ltr">SQL</span>، <span class="en" dir="ltr">DAX</span> و <span class="en" dir="ltr">Python</span>، با تجربه اجرایی در طراحی معماری داده (<span class="en" dir="ltr">Warehouse</span>/<span class="en" dir="ltr">ETL</span>) در مقیاس بیش از ۵۰۰ میلیون رکورد.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div></div>
+        <div class="sec-title-main">سوابق شغلی</div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">فعالیت مستقل — چند کارفرما</div><div>تهران، ایران</div><div>آوریل ۲۰۲۶ تاکنون (۵ ماه)</div></div>
+        <div>
+          <p class="role">مهندس هوش تجاری (<span class="en" dir="ltr">BI</span>)</p>
+          <ul>
+            <li>تحلیل نیازمندی‌های کسب‌وکار، شناسایی فرصت‌های بهبود و ارائه بینش‌های داده‌محور</li>
+            <li>توسعه و بهینه‌سازی فرآیندهای <span class="en" dir="ltr">ETL</span> جهت یکپارچه‌سازی، پاک‌سازی و مدیریت داده‌ها از منابع مختلف</li>
+            <li>طراحی داشبوردهای مدیریتی و عملیاتی در <span class="en" dir="ltr">Power BI</span>، تعریف و پایش <span class="en" dir="ltr">KPI</span>ها و توسعه گزارش‌های تحلیلی با <span class="en" dir="ltr">DAX</span> و <span class="en" dir="ltr">Power Query</span></li>
+            <li>بهینه‌سازی <span class="en" dir="ltr">Query</span>های <span class="en" dir="ltr">SQL</span> و مدل‌های تحلیلی جهت افزایش سرعت گزارش‌گیری و بهبود عملکرد سیستم‌های <span class="en" dir="ltr">BI</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">شرکت انتقال داده‌های آسیاتک</div><div>تهران، ایران</div><div>آگوست ۲۰۲۵ تا مارس ۲۰۲۶ (۷ ماه)</div></div>
+        <div>
+          <p class="role">مهندس هوش تجاری (<span class="en" dir="ltr">BI</span>)</p>
+          <ul>
+            <li>همکاری با ذینفعان کسب‌وکار برای تحلیل نیازمندی‌ها و ارائه راهکارهای داده‌محور و مقیاس‌پذیر</li>
+            <li>طراحی و پیاده‌سازی پایپلاین‌های <span class="en" dir="ltr">ETL</span> برای انتقال و یکپارچه‌سازی داده‌های حجیم از منابع مختلف</li>
+            <li>طراحی و توسعه انبار داده با قابلیت پشتیبانی از بیش از ۵۰۰ میلیون رکورد برای تحلیل و گزارش‌گیری سازمانی</li>
+            <li>طراحی و توسعه داشبوردها و گزارش‌های تعاملی <span class="en" dir="ltr">BI</span> به‌منظور تسهیل تصمیم‌گیری داده‌محور سازمان</li>
+            <li>طراحی مدل‌های <span class="en" dir="ltr">OLAP</span> و پیاده‌سازی محاسبات و شاخص‌های پیشرفته جهت استخراج بینش‌های تحلیلی</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">سامانه‌های مدیریت</div><div>تهران، ایران</div><div>فوریه ۲۰۲۴ تا آوریل ۲۰۲۵ (۱ سال و ۲ ماه)</div></div>
+        <div>
+          <p class="role">کارشناس هوش تجاری (<span class="en" dir="ltr">BI</span>) و تحلیل‌گر سیستم</p>
+          <p>مشارکت در پروژه استقرار و توسعه <span class="en" dir="ltr">BI</span> و <span class="en" dir="ltr">CRM</span> شرکت‌های مپنا، صبا باتری، دیجی‌کالا، همراه اول، ماورای فنون، صنایع ورق ایران، کیمیا اسپیدی و استیل آروین، شامل:</p>
+          <ul>
+            <li>تحلیل و مشاوره در بهبود فرآیندهای کسب‌وکار (فروش، بازاریابی، تولید) برای مشتریان</li>
+            <li>بهینه‌سازی ساختار انبار داده و ساخت/بهبود فرآیندهای <span class="en" dir="ltr">ETL</span> با استفاده از <span class="en" dir="ltr">SSIS</span></li>
+            <li>طراحی و توسعه مدل‌های <span class="en" dir="ltr">OLAP</span> (<span class="en" dir="ltr">Tabular</span>) با استفاده از <span class="en" dir="ltr">SSAS</span></li>
+            <li>طراحی و پیاده‌سازی گزارش‌های تحلیلی و داشبوردهای مدیریتی با استفاده از <span class="en" dir="ltr">Power BI</span></li>
+            <li>طراحی دیتامدل و تدوین فرم‌های <span class="en" dir="ltr">RDL</span></li>
+            <li>تحلیل و تست سیستم‌های نرم‌افزاری و <span class="en" dir="ltr">API</span>ها</li>
+            <li>راه‌اندازی سامانه اطلاعاتی <span class="en" dir="ltr">CRM</span>، استقرار و هم‌راستایی لایه‌های تعاملی برای مشتریان</li>
+            <li>پیاده‌سازی و توسعه فرآیندهای مورد نیاز در <span class="en" dir="ltr">Microsoft Dynamics</span></li>
+            <li>طراحی و توسعه پرتال مشتریان و ارائه <span class="en" dir="ltr">UI</span> بهینه برای کاربران، مشتریان و نمایندگان</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">شرکت نام نیک (کیک آشنا)</div><div>کرج، ایران</div><div>ژوئن ۲۰۲۳ تا دسامبر ۲۰۲۳ (۶ ماه)</div></div>
+        <div>
+          <p class="role">کارشناس تحلیل داده</p>
+          <ul>
+            <li>تحلیل داده‌های تولید و پیش‌بینی تقاضا جهت بهبود برنامه‌ریزی ظرفیت خطوط تولید و پشتیبانی از تصمیم‌گیری عملیاتی</li>
+            <li>طراحی و توسعه داشبوردهای تحلیلی <span class="en" dir="ltr">Power BI</span> و پردازش داده‌ها با استفاده از <span class="en" dir="ltr">DAX</span> و <span class="en" dir="ltr">Power Query (M)</span></li>
+            <li>طراحی و ساخت <span class="en" dir="ltr">Data Warehouse</span> و <span class="en" dir="ltr">ETL</span> اطلاعات با استفاده از <span class="en" dir="ltr">SSIS</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">شبکه بهداشت ملارد</div><div>ملارد، ایران</div><div>مه ۲۰۲۱ تا ژوئن ۲۰۲۲ (۱ سال و ۱ ماه)</div></div>
+        <div>
+          <p class="role">کارشناس تحلیل داده</p>
+          <ul>
+            <li>تحلیل داده و توسعه مدل‌های پیش‌بینی تقاضای روزانه واکسن با استفاده از الگوریتم‌های یادگیری ماشین و مدل‌های سری زمانی</li>
+            <li>بهینه‌سازی تخصیص منابع و برنامه‌ریزی واکسیناتورها در مراکز واکسیناسیون با هدف افزایش کارایی و بهره‌وری</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div></div>
+        <div class="sec-title-main">تحصیلات</div>
+      </div>
+      <div class="row entry">
+        <div class="meta"><div class="org">دانشگاه خوارزمی تهران</div><div>تهران، ایران</div><div>۲۰۲۳ تا ۲۰۲۶</div></div>
+        <div>
+          <p class="role">کارشناسی ارشد مهندسی صنایع</p>
+          <ul>
+            <li>موضوع پایان‌نامه: طراحی زنجیره تأمین پایدار باتری خودروهای الکتریکی تحت شرایط عدم قطعیت با رویکرد داده‌کاوی</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row entry">
+        <div class="meta"><div class="org">دانشگاه بوعلی سینا</div><div>همدان، ایران</div><div>۲۰۱۹ تا ۲۰۲۳</div></div>
+        <div>
+          <p class="role">کارشناسی مهندسی صنایع</p>
+          <ul>
+            <li>موضوع پروژه پایانی: روش‌های داده‌کاوی برای پیش‌بینی و تشخیص بیماری سرطان سینه</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">دوره‌های آموزشی و گواهی‌نامه‌ها</div>
+        <div>
+          <ul>
+            <li><span class="lead">مهندسی داده</span> — دکتر محمد فزونی، شرکت آسیاتک (۸۵ ساعت، ۲۰۲۵)</li>
+            <li><span class="lead">ماشین لرنینگ</span> — دکتر شریفی زارچی، دانشگاه شریف (۴۸ ساعت، ۲۰۲۴، بدون گواهینامه)</li>
+            <li><span class="lead"><span class="en" dir="ltr">Microsoft Dynamics CRM</span></span> (مقدماتی و پیشرفته) — شرکت سامانه‌های مدیریت (۴۶ ساعت، ۲۰۲۴)</li>
+            <li><span class="lead">آمار در علم داده</span> — دکتر ایوزیان، موسسه توسعه (۷۵ ساعت، ۲۰۲۳)</li>
+            <li><span class="lead">هوش تجاری</span> — مهندس ایمن‌پور، موسسه توسعه (۱۵۰ ساعت، ۲۰۲۳)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">مهارت‌های فنی</div>
+        <div class="skill-groups">
+          <div class="grp">
+            <div class="grp-title">هوش تجاری و مصورسازی داده</div>
+            <span class="tag"><span class="en" dir="ltr">Power BI</span> (پیشرفته)</span><span class="tag"><span class="en" dir="ltr">SSRS</span> (پیشرفته)</span><span class="tag"><span class="en" dir="ltr">Excel</span> (پیشرفته)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">پایگاه داده و انبار داده</div>
+            <span class="tag"><span class="en" dir="ltr">SQL Server</span> (پیشرفته)</span><span class="tag"><span class="en" dir="ltr">SSIS</span> (متوسط)</span><span class="tag"><span class="en" dir="ltr">SSAS</span> (متوسط)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title"><span class="en" dir="ltr">CRM</span> و سیستم‌های سازمانی</div>
+            <span class="tag"><span class="en" dir="ltr">Microsoft Dynamics</span> (پیشرفته)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">برنامه‌نویسی</div>
+            <span class="tag"><span class="en" dir="ltr">Python</span> (متوسط — <span class="en" dir="ltr">Pandas</span>, <span class="en" dir="ltr">NumPy</span>, <span class="en" dir="ltr">Matplotlib</span>)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">مدل‌سازی و طراحی فرآیند</div>
+            <span class="tag"><span class="en" dir="ltr">UML</span></span><span class="tag"><span class="en" dir="ltr">BPMN</span></span><span class="tag"><span class="en" dir="ltr">Visual Paradigm</span> (متوسط)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">سایر ابزارها</div>
+            <span class="tag"><span class="en" dir="ltr">Git</span></span><span class="tag"><span class="en" dir="ltr">Jira</span></span><span class="tag"><span class="en" dir="ltr">QlikView</span></span><span class="tag"><span class="en" dir="ltr">Tableau</span></span><span class="tag"><span class="en" dir="ltr">Docker</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">مهارت‌های تکمیلی</div>
+        <div>
+          <ul>
+            <li>تجربه کار با ابزارهای <span class="en" dir="ltr">SSIS</span>، <span class="en" dir="ltr">SSRS</span> و <span class="en" dir="ltr">SSAS</span> برای پردازش و تحلیل داده‌ها</li>
+            <li>آشنایی با <span class="en" dir="ltr">DAX</span> و M در پردازش و تحلیل داده‌ها در <span class="en" dir="ltr">Power BI</span></li>
+            <li>توانایی طراحی و ارائه گزارش‌های تحلیلی و داشبوردهای مدیریتی؛ مدل‌سازی <span class="en" dir="ltr">UML</span> و طراحی معماری سیستم‌های اطلاعاتی</li>
+            <li>آشنایی با استاندارد مدل‌سازی <span class="en" dir="ltr">BPMN</span>، تحلیل و بهینه‌سازی فرآیندهای کسب‌وکار</li>
+            <li>پیاده‌سازی فرآیندهای موردنیاز در <span class="en" dir="ltr">Microsoft Dynamics</span>؛ ساخت فرم‌های <span class="en" dir="ltr">RDL</span> با استفاده از کوئری‌های پیچیده <span class="en" dir="ltr">SQL</span></li>
+            <li>آشنایی با مدل‌ها و کتابخانه‌های یادگیری ماشین؛ تجربه کار با کتابخانه‌های <span class="en" dir="ltr">Pandas</span>، <span class="en" dir="ltr">NumPy</span> و <span class="en" dir="ltr">Matplotlib</span> در <span class="en" dir="ltr">Python</span></li>
+            <li>آشنایی با شاخص‌های کلیدی عملکرد (<span class="en" dir="ltr">KPI</span>) و فرآیندهای واحدهای سازمانی</li>
+            <li>تفکر سیستمی، روحیه کار تیمی، کنجکاوی و توانمندی حل مسئله؛ طراحی و تحلیل آزمون <span class="en" dir="ltr">A/B</span></li>
+            <li>آشنایی با <span class="en" dir="ltr">Power Platform</span> (<span class="en" dir="ltr">Power Apps</span>، <span class="en" dir="ltr">Power Automate</span>، <span class="en" dir="ltr">Power BI</span>)</li>
+            <li>توانایی تبدیل یافته‌های تحلیلی به روایت و توصیه روشن برای مدیران و تیم‌های غیرفنی</li>
+            <li>تحلیل ریشه‌ای علل و شناسایی الگوهای رفتاری در داده‌های عملیاتی</li>
+            <li>تعریف معیارهای موفقیت و سنجش اثر پروژه‌های تحلیلی</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">پروژه‌ها و تجربیات آکادمیک</div>
+        <div>
+          <ul>
+            <li><span class="lead">پایان‌نامه کارشناسی ارشد (۲۰۲۶):</span> طراحی زنجیره تأمین پایدار باتری خودروهای الکتریکی تحت شرایط عدم قطعیت با رویکرد داده‌کاوی</li>
+            <li><span class="lead">مدل‌سازی برنامه‌ریزی منابع و پیش‌بینی ظرفیت (نمونه‌کار فنی، ۲۰۲۶):</span> طراحی و پیاده‌سازی یک راهکار تحلیلی برای برنامه‌ریزی منابع و پیش‌بینی ظرفیت یک شرکت <span class="en" dir="ltr">Marketplace</span> — <a class="en" dir="ltr" style="color:#000;" href="https://github.com/Milad-Shabani/Resource-planning-capacity-forecasting">github.com/Milad-Shabani/Resource-planning-capacity-forecasting</a></li>
+            <li><span class="lead">مهندس هوش تجاری (<span class="en" dir="ltr">BI</span>) | پروژه مستقل — پخش التیام (اردیبهشت تا مرداد ۱۴۰۴، ۳ ماه):</span> توسعه سامانه هوش تجاری برای شرکت داروسازی خوارزمی و پخش التیام، شامل استخراج داده از <span class="en" dir="ltr">API</span>های ۱۵ شرکت پخش دارو با <span class="en" dir="ltr">C#</span> در محیط <span class="en" dir="ltr">SSIS</span>، طراحی انبار داده و مدل‌های <span class="en" dir="ltr">SSAS Tabular</span> با <span class="en" dir="ltr">DAX</span>، و داشبوردهای مدیریتی در <span class="en" dir="ltr">Power BI</span></li>
+            <li><span class="lead">وب‌سایت شخصی (۲۰۲۴):</span> طراحی و راه‌اندازی <span class="en" dir="ltr">MiladShabani.ir</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">زبان‌ها</div>
+        <div>فارسی (زبان مادری) &nbsp;•&nbsp; انگلیسی (متوسط)</div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">تدریس و فعالیت‌های داوطلبانه</div>
+        <div>
+          <ul>
+            <li>دستیار آموزشی — درس کنترل موجودی، دانشگاه بوعلی سینا (۲۰۲۲)</li>
+            <li>عضو جمعیت هلال احمر (۲۰۱۶)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

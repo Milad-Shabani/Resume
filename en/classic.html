@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Milad Shabani — Business Intelligence Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent: #1f3864;          /* navy blue name / section color */
+    --ink: #2d2d2d;             /* body text */
+    --muted: #6f6f6f;           /* dates, company, title */
+    --rule: #d9d9d9;            /* hairline rules */
+    --bullet: #4a4a4a;
+    --page-w: 820px;
+    --left-col: 150px;
+    --gap: 24px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ececed;
+    color: var(--ink);
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.46;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: var(--page-w);
+    margin: 32px auto;
+    background: #fff;
+    padding: 48px 54px 56px;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ── Header ─────────────────────────────────────────── */
+  .main-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 4px;
+  }
+  .header-bar {
+    width: 5px;
+    align-self: stretch;
+    min-height: 62px;
+    background: var(--accent);
+    border-radius: 3px;
+    flex: 0 0 5px;
+  }
+  .name {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin: 0;
+  }
+  .subtitle {
+    font-size: 15.5px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+    margin: 5px 0 0;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 18px 0;
+  }
+
+  /* ── Contact grid ───────────────────────────────────── */
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 18px;
+    margin: 4px 0 2px;
+  }
+  .contact a { color: var(--accent); text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .contact-item svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .contact-item svg.solid { fill: var(--accent); stroke: none; }
+
+  /* ── Section / two-column rows ──────────────────────── */
+  .section { margin-top: 6px; }
+
+  .row {
+    display: grid;
+    grid-template-columns: var(--left-col) 1fr;
+    column-gap: var(--gap);
+    align-items: start;
+  }
+
+  .sec-title {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  /* Title placed in the main column (Work Experience, Education) */
+  .sec-title-main {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    margin: 12px 0 8px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .meta .org { color: var(--ink); font-weight: 700; }
+
+  .entry { margin-bottom: 13px; }
+  .role {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 13.5px;
+    margin: 0 0 5px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .entry p { margin: 0 0 6px; }
+  .lead { font-weight: 700; color: var(--ink); margin: 8px 0 3px; break-after: avoid; page-break-after: avoid; }
+
+  ul {
+    margin: 4px 0 8px;
+    padding-left: 18px;
+  }
+  ul li {
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  ul li::marker { color: var(--bullet); }
+  ul ul { margin: 4px 0; }
+  ul ul li { list-style-type: circle; }
+
+  .highlights li { margin-bottom: 6px; }
+  .highlights .k { font-weight: 700; }
+
+  .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .skill-groups .grp { margin-bottom: 8px; }
+  .skill-groups .grp-title { font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+  .skill-groups .grp span.tag {
+    display: inline-block;
+    background: #f0f3f8;
+    color: var(--accent);
+    border: 1px solid #dbe3ef;
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin: 2px 4px 2px 0;
+    font-size: 12px;
+  }
+
+  /* ── Print button ───────────────────────────────────── */
+  .print-btn {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(31, 56, 100, 0.35);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    z-index: 100;
+  }
+  .print-btn:hover {
+    background: #16294a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(31, 56, 100, 0.42);
+  }
+  .print-btn:active { transform: translateY(0); }
+  .print-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ── Print (A4) ─────────────────────────────────────── */
+  @page { size: A4; margin: 14mm 15mm; }
+  @media print {
+    html, body { background: #fff; font-size: 10.5pt; }
+    .page {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    a { color: var(--accent); }
+    li { break-inside: avoid; page-break-inside: avoid; }
+    .print-btn { display: none !important; }
+  }
+</style></head>
+<body>
+  <button class="print-btn" onclick="window.print()" aria-label="Print resume">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print / Save as PDF
+  </button>
+  <main class="page">
+
+    <header class="main-header">
+      <div class="header-bar"></div>
+      <div>
+        <h1 class="name">Milad Shabani</h1>
+        <p class="subtitle">Business Intelligence Engineer</p>
+      </div>
+    </header>
+
+    <hr class="divider" />
+
+    <!-- Contact -->
+    <section class="contact">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6z"/><path d="M22 6l-10 7L2 6"/></svg>
+        <a href="mailto:milad.shabani6515@gmail.com">milad.shabani6515@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Karaj, Alborz, Iran</span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <a href="https://miladshabani.ir">miladshabani.ir</a>
+      </div>
+      <div class="contact-item">
+        <svg class="solid" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        <a href="https://linkedin.com/in/milad-shabani97">linkedin.com/in/milad-shabani97</a>
+      </div>
+      <div class="contact-item">
+        <svg class="solid" viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+        <a href="https://github.com/Milad-Shabani">github.com/Milad-Shabani</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Summary -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Summary</div>
+        <div>
+          <p style="margin:0 0 8px;">Business Intelligence Engineer with 4+ years of experience turning business needs into actionable insights, defining and tracking organizational KPIs, and designing dashboards and decision-support reports for leadership. Worked directly with sales, marketing, and production teams across telecom, pharmaceutical, manufacturing, and technology sectors to identify improvement opportunities and deliver data-driven solutions. Proficient in Power BI, SQL, DAX, and Python, with hands-on data architecture (Warehouse/ETL) experience at a scale of 500M+ records.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Work Experience -->
+    <section class="section">
+      <div class="row">
+        <div></div>
+        <div class="sec-title-main">Work Experience</div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">Freelance — Multiple Clients</div><div>Tehran, Iran</div><div>Apr 2026 - Present (5 mos)</div></div>
+        <div>
+          <p class="role">Business Intelligence Engineer</p>
+          <ul>
+            <li>Analyze business requirements, identify improvement opportunities, and deliver data-driven insights</li>
+            <li>Develop and optimize ETL processes to integrate, cleanse, and manage data from multiple sources</li>
+            <li>Design management and operational dashboards in Power BI; define and monitor KPIs; build analytical reports with DAX and Power Query</li>
+            <li>Optimize SQL queries and analytical models to improve reporting speed and BI system performance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">Asiatech (Data Transfer Company)</div><div>Tehran, Iran</div><div>Aug 2025 - Mar 2026 (7 mos)</div></div>
+        <div>
+          <p class="role">Business Intelligence Engineer</p>
+          <ul>
+            <li>Collaborated with business stakeholders to analyze requirements and deliver scalable, data-driven solutions</li>
+            <li>Designed and implemented ETL pipelines to transfer and integrate high-volume data from multiple sources</li>
+            <li>Designed and built a data warehouse supporting 500M+ records for organizational analysis and reporting</li>
+            <li>Designed interactive BI dashboards and reports to support data-driven decision-making</li>
+            <li>Designed OLAP models and implemented advanced calculations and metrics for analytical insight extraction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">Samanehaye Modiriat</div><div>Tehran, Iran</div><div>Feb 2024 - Apr 2025 (1 yr 2 mos)</div></div>
+        <div>
+          <p class="role">Business Intelligence (BI) Expert &amp; Systems Analyst</p>
+          <p>Participated in BI and CRM deployment/development projects for Mapna, Saba Battery, Digikala, Hamrah Aval, Mavarae Fonoon, Sanaye Varaq Iran, Kimia Speedy, and Steel Arvin, including:</p>
+          <ul>
+            <li>Analyzed and advised on business-process improvement (sales, marketing, production) for clients</li>
+            <li>Optimized data warehouse structure and built/improved ETL processes using SSIS</li>
+            <li>Designed and developed OLAP (Tabular) models using SSAS</li>
+            <li>Designed and implemented analytical reports and management dashboards in Power BI</li>
+            <li>Designed data models and authored RDL report forms</li>
+            <li>Analyzed and tested software systems and APIs</li>
+            <li>Set up the CRM information system; deployed and aligned interactive customer-facing layers</li>
+            <li>Implemented required processes in Microsoft Dynamics</li>
+            <li>Designed a customer portal with optimized UI for users, customers, and representatives</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">Nick Name Company (Kik Ashna)</div><div>Karaj, Iran</div><div>Jun 2023 - Dec 2023 (6 mos)</div></div>
+        <div>
+          <p class="role">Data Analyst</p>
+          <ul>
+            <li>Analyzed production data and forecast demand to improve production-line capacity planning and support operational decisions</li>
+            <li>Designed Power BI analytical dashboards and processed data with DAX and Power Query (M)</li>
+            <li>Designed and built a Data Warehouse and ETL pipeline using SSIS</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row entry">
+        <div class="meta"><div class="org">Health Network Malard</div><div>Malard, Iran</div><div>May 2021 - Jun 2022 (1 yr 1 mo)</div></div>
+        <div>
+          <p class="role">Data Analyst</p>
+          <ul>
+            <li>Analyzed data and developed daily vaccine demand-forecasting models using ML algorithms and time-series models</li>
+            <li>Optimized resource allocation and vaccinator scheduling across vaccination centers to increase efficiency</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Education -->
+    <section class="section">
+      <div class="row">
+        <div></div>
+        <div class="sec-title-main">Education</div>
+      </div>
+      <div class="row entry">
+        <div class="meta"><div class="org">Kharazmi University of Tehran</div><div>Tehran, Iran</div><div>2023 - 2026</div></div>
+        <div>
+          <p class="role">M.Sc. in Industrial Engineering</p>
+          <ul>
+            <li>Thesis: Designing a sustainable supply-chain model for electric-vehicle batteries under uncertainty using a data-mining approach</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row entry">
+        <div class="meta"><div class="org">Bu-Ali Sina University</div><div>Hamedan, Iran</div><div>2019 - 2023</div></div>
+        <div>
+          <p class="role">B.Sc. in Industrial Engineering</p>
+          <ul>
+            <li>Final project: Review of data-mining methods for breast-cancer prediction and diagnosis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Training & Certifications -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Training &amp; Certifications</div>
+        <div>
+          <ul>
+            <li><span class="lead">Data Engineering</span> — Dr. Mohammad Fazouni, Asiatech (85 hrs, 2025)</li>
+            <li><span class="lead">Machine Learning</span> — Dr. Sharifi Zarchi, Sharif University (48 hrs, 2024, no certificate)</li>
+            <li><span class="lead">Microsoft Dynamics CRM</span> (Basic &amp; Advanced) — Samanehaye Modiriat Company (46 hrs, 2024)</li>
+            <li><span class="lead">Statistics in Data Science</span> — Dr. Ivozian, Tose'e Institute (75 hrs, 2023)</li>
+            <li><span class="lead">Business Intelligence</span> — Eng. Eimanpour, Tose'e Institute (150 hrs, 2023)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Technical Skills</div>
+        <div class="skill-groups">
+          <div class="grp">
+            <div class="grp-title">BI &amp; Data Visualization</div>
+            <span class="tag">Power BI (Advanced)</span><span class="tag">SSRS (Advanced)</span><span class="tag">Excel (Advanced)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">Databases &amp; Data Warehouse</div>
+            <span class="tag">SQL Server (Advanced)</span><span class="tag">SSIS (Intermediate)</span><span class="tag">SSAS (Intermediate)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">CRM &amp; Enterprise Systems</div>
+            <span class="tag">Microsoft Dynamics (Advanced)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">Programming</div>
+            <span class="tag">Python (Intermediate — Pandas, NumPy, Matplotlib)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">Modeling &amp; Process Design</div>
+            <span class="tag">UML</span><span class="tag">BPMN</span><span class="tag">Visual Paradigm (Intermediate)</span>
+          </div>
+          <div class="grp">
+            <div class="grp-title">Other Tools</div>
+            <span class="tag">Git</span><span class="tag">Jira</span><span class="tag">QlikView</span><span class="tag">Tableau</span><span class="tag">Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Additional Skills -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Additional Skills</div>
+        <div>
+          <ul>
+            <li>Hands-on experience with SSIS, SSRS, and SSAS for data processing and analysis</li>
+            <li>Proficient in DAX and M for Power BI data processing and analysis</li>
+            <li>Skilled in designing and presenting analytical reports and management dashboards; UML modeling and information-system architecture design</li>
+            <li>Familiar with the BPMN modeling standard for business-process analysis and optimization</li>
+            <li>Implementation of required processes in Microsoft Dynamics; built RDL forms using complex SQL queries</li>
+            <li>Familiar with machine-learning models and libraries; hands-on with Pandas, NumPy, and Matplotlib in Python</li>
+            <li>Familiar with KPI frameworks and organizational-unit processes</li>
+            <li>Strong systems thinking, team spirit, curiosity, and problem-solving; designed and analyzed A/B tests</li>
+            <li>Working knowledge of Power Platform (Power Apps, Power Automate, Power BI)</li>
+            <li>Able to translate analytical findings into clear narratives and recommendations for managers and non-technical teams</li>
+            <li>Root-cause analysis and identifying behavioral patterns in operational data</li>
+            <li>Defining success metrics and measuring the impact of analytical projects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Projects & Academic Experience -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Projects &amp; Academic Experience</div>
+        <div>
+          <ul>
+            <li><span class="lead">Master's Thesis (2026):</span> Designing a sustainable supply-chain model for electric-vehicle batteries under uncertainty using a data-mining approach</li>
+            <li><span class="lead">Resource Planning &amp; Capacity Forecasting (Portfolio Project, 2026):</span> Designed and implemented an analytical solution for resource planning and capacity forecasting for a marketplace company — <a style="color:#000;" href="https://github.com/Milad-Shabani/Resource-planning-capacity-forecasting">github.com/Milad-Shabani/Resource-planning-capacity-forecasting</a></li>
+            <li><span class="lead">Business Intelligence (BI) Engineer | Independent Project — Eltiam Pharmaceutical Distribution (May 2025 - Aug 2025, 3 months):</span> Developed a BI system for Kharazmi Pharmaceutical Company and Eltiam Pharmaceutical Distribution, including a data pipeline extracting data from APIs of 15 pharma-distribution companies via C# in SSIS, a data warehouse with SSAS Tabular models in DAX, and management dashboards in Power BI</li>
+            <li><span class="lead">Personal Website (2024):</span> Designed and launched MiladShabani.ir</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Languages -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Languages</div>
+        <div>Persian (Native) &nbsp;•&nbsp; English (Intermediate)</div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Volunteer -->
+    <section class="section">
+      <div class="row">
+        <div class="sec-title">Teaching &amp; Volunteer Activities</div>
+        <div>
+          <ul>
+            <li>Teaching Assistant — Inventory Control, Bu-Ali Sina University (2022)</li>
+            <li>Member — Red Crescent Society (2016)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
