@@ -197,6 +197,7 @@
   .proj:last-child{margin-bottom:0;}
   .proj::before{content:"❖"; position:absolute; right:0; top:2px; color:var(--blue); font-size:9.5px;}
   .proj b{color:var(--navy);}
+  .proj-intro{margin:-2px 0 8px; font-size:11.2px; color:var(--muted);}
 
   .course{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); flex-wrap:wrap; break-inside:avoid-page;}
   .course:first-child{padding-top:0;}
@@ -535,14 +536,17 @@
         </div>
 
         <div class="blk">
-          <div class="blk-title">نمونه کار (گیت‌هاب)
+          <div class="blk-title">نمونه کارهای برگزیده (گیت‌هاب)
           </div>
-          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Powerbi-analytics-online-market" target="_blank" rel="noopener">تحلیل‌های Power BI برای فروشگاه آنلاین</a>:</b> مجموعه‌ای از پروژه‌های Power BI شامل داشبورد، گزارش و مصورسازی داده به‌همراه فایل‌های PBIX، داده نمونه و مستندات.</div>
-          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Resource-planning-capacity-forecasting" target="_blank" rel="noopener">برنامه‌ریزی منابع و پیش‌بینی ظرفیت</a>:</b> تبدیل پیش‌بینی فروش به برنامه‌ی روزانه‌ی نیروی انسانی و تحویل برای هر مرکز پخش (DC)، برای یک شرکت مارکت‌پلیس.</div>
-          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Pharmapulse-supply-chain-intelligence" target="_blank" rel="noopener">هوش زنجیره تأمین دارویی (PharmaPulse)</a>:</b> تحلیل سرتاسری تقاضا، موجودی، ریسک تأمین و سرمایه در گردش دارویی با پیش‌بینی کوانتایل LightGBM و بخش‌بندی ABC/XYZ.</div>
-          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Covid-vaccination-demand-forecasting" target="_blank" rel="noopener">پیش‌بینی تقاضای واکسیناسیون ملارد</a>:</b> مقایسه مدل‌های SARIMA و XGBoost برای پیش‌بینی تقاضای روزانه واکسن در ۵ مرکز واکسیناسیون و ۱ مرکز تأمین، با بک‌تست و برنامه‌ریزی ۳۰ روزه.</div>
-          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Food-manufacturing-sop-planning-engine" target="_blank" rel="noopener">موتور برنامه‌ریزی S&amp;OP تولید مواد غذایی</a>:</b> پیش‌بینی تقاضا (Holt-Winters)، برنامه‌ریزی تولید با محدودیت ظرفیت و نیرو (LP) و MRP برای یک تولیدکننده صنعتی کیک و شیرینی با ۵ خط تولید.</div>
-          <div class="proj"><b><a href="https://github.com/Milad-Shabani/User-analytics-data-pipeline" target="_blank" rel="noopener">پایپ‌لاین بلادرنگ تحلیل کاربران</a>:</b> ترکیب داده ابعادی پروفایل کاربر با رویدادهای افزایشی JSON در انبار داده و جدول Parquet پارتیشن‌بندی‌شده (SQLite/SQL Server/Postgres).</div>
+          <div class="proj-intro">هر ۱۷ پروژه با کد کامل و دادهٔ نمونه در <a href="https://github.com/Milad-Shabani?tab=repositories" target="_blank" rel="noopener">github.com/Milad-Shabani</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Pharmapulse-supply-chain-intelligence" target="_blank" rel="noopener">هوش زنجیرهٔ تأمین دارو (PharmaPulse)</a>:</b> پیش‌بینی کوانتایل LightGBM برای ۱۴ مرکز پخش، بخش‌بندی ABC/XYZ، موجودی اطمینان، ریسک تأمین‌کننده و چرخهٔ تبدیل وجه نقد. <a href="https://milad-shabani.github.io/Pharmapulse-supply-chain-intelligence/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Steel-sales-crm-intelligence" target="_blank" rel="noopener">هوش فروش و CRM بازرگانی فولاد</a>:</b> خروجی Dynamics 365 با ۷۱ کنترل کیفیت به مدل ستاره‌ای می‌رسد؛ بازده کمپین، دلیل باخت معامله، سود هر تن، فرآیندهای BPMN 2.0 و مدل احتمال برد. <a href="https://milad-shabani.github.io/Steel-sales-crm-intelligence/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Marketco-marketplace-intelligence" target="_blank" rel="noopener">هوش بازارگاه سوپرمارکتی</a>:</b> ۷۸۰ هزار رکورد فروش و CRM به سبک Dynamics 365، پیش‌بینی کوانتایل LightGBM با تقویم حراج و مدل ریزش مشتری روی پنل RFM. <a href="https://milad-shabani.github.io/Marketco-marketplace-intelligence/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Retail-banking-analytics" target="_blank" rel="noopener">تحلیل بانکداری خرد</a>:</b> بخش‌بندی مشتری، مدل‌های ریزش و ریسک اعتباری، پیش‌بینی ۱۲ ماهه، برنامه‌ریزی سناریو و بهینه‌سازی بودجهٔ بازاریابی. <a href="https://milad-shabani.github.io/Retail-banking-analytics/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Covid-vaccination-demand-forecasting" target="_blank" rel="noopener">پیش‌بینی تقاضای واکسیناسیون کرونا</a>:</b> مقایسهٔ SARIMA و XGBoost با دو روش ارزیابی؛ در افق ۴۵ روزه SARIMA قابل اتکا می‌ماند و XGBoost واگرا می‌شود. <a href="https://milad-shabani.github.io/Covid-vaccination-demand-forecasting/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Battery-crm-sop-planning-engine" target="_blank" rel="noopener">برنامه‌ریزی فروش و عملیات کارخانهٔ باتری</a>:</b> پیش‌بینی تقاضا از خط لولهٔ فروش CRM، برنامهٔ تولید چهار خط با برنامه‌ریزی خطی و MRP از دل BOM. <a href="https://milad-shabani.github.io/Battery-crm-sop-planning-engine/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Iran-population-labour-dashboard" target="_blank" rel="noopener">جمعیت و بازار کار ایران</a>:</b> روایتی دوزبانه از یک توهم آماری: نرخ بیکاری از ۱۲.۴ به ۷.۵ درصد رسید در حالی که نرخ مشارکت ۲.۶ واحد افت کرد. <a href="https://milad-shabani.github.io/Iran-population-labour-dashboard/index.fa.html" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
+          <div class="proj"><b><a href="https://github.com/Milad-Shabani/Delivery-marketplace-analytics-engine" target="_blank" rel="noopener">بازارگاه سفارش غذا: رشد یا سود؟</a>:</b> سود و زیان هر شهر، تحلیل کوهورت، پیش‌بینی ۱۲ ماهه (WAPE ۱۲–۱۴٪) و بازتخصیص بودجهٔ تخفیف با بهینه‌سازی مقید. <a href="https://milad-shabani.github.io/Delivery-marketplace-analytics-engine/" target="_blank" rel="noopener">(داشبورد زنده)</a></div>
         </div>
 
         <div class="blk">
