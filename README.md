@@ -2,7 +2,7 @@
 
 Business Intelligence Engineer · Karaj, Iran · [github.com/Milad-Shabani](https://github.com/Milad-Shabani) · [miladshabani.ir](https://miladshabani.ir)
 
-Latest version: September 2026.
+Latest version: November 2026.
 
 | Design | English | فارسی |
 | --- | --- | --- |
